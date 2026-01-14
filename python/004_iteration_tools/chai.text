@@ -1,0 +1,96 @@
+msahilhussain@msahils-MacBook-Air 004_iteration_tools % python3
+Python 3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+Cmd click to launch VS Code Native REPL
+>>> f = open('chai.py')
+>>> f.readline()
+'import time\n'
+>>> f.readline()
+'print("chai is here")\n'
+>>> f.readline()
+'username = "sahil_hussain"\n'
+>>> f.readline()
+'print(username)'
+>>> f.readline()
+''
+>>> f.readline()
+''
+>>> f = open('chai.py')
+>>> f.__next__
+<method-wrapper '__next__' of _io.TextIOWrapper object at 0x100b51700>
+>>> f.__next__()
+'import time\n'
+>>> f.__next__()
+'print("chai is here")\n'
+>>> f.__next__()
+'username = "sahil_hussain"\n'
+>>> f.__next__()
+'print(username)'
+>>> f.__next__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    import platform
+    ^^^^^^^^^^^^
+StopIteration
+>>> for line in open('chai.py')
+  File "<stdin>", line 1
+    for line in open('chai.py')
+                               ^
+SyntaxError: expected ':'
+>>> for line in open('chai.py'):
+...     print(line)
+... 
+import time
+
+print("chai is here")
+
+username = "sahil_hussain"
+
+print(username)
+>>> f = open('chai.py')
+>>> while True:
+...     line = f.readline()
+...     if not line: break
+...     print(line, end='')
+... 
+import time
+print("chai is here")
+username = "sahil_hussain"
+print(username)>>> 
+>>> 
+>>> myList = [1,2,3,4]
+>>> i = iter(myList)
+>>> 
+>>> i
+<list_iterator object at 0x100bf6e60>
+>>> i.__next__()
+1
+>>> i
+<list_iterator object at 0x100bf6e60>
+>>> i.__next__()
+2
+>>> i.__next__()
+3
+>>> i.__next__()
+4
+>>> i.__next__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    import platform
+    ^^^^^^^^^^^^
+StopIteration
+>>> f = open('chai.py')
+>>> iter(f) is f
+True
+>>> iter(f) is f.__iter__()
+True
+>>> nynewlist = [1,4,6,7,9]
+>>> iter(mynewlist) is mynewlist
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    import platform
+         ^^^^^^^^^
+NameError: name 'mynewlist' is not defined. Did you mean: 'nynewlist'?
+>>> iter(nynewlist) is nynewlist
+False
+>>> 
